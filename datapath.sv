@@ -7,18 +7,18 @@ module datapath(input logic clk, reset,
                 input logic [31:0] instr,
                 output logic [31:0] aluoutM, writedata,
                 input logic [31:0] readdata,
-                output logic [31:0] instD,
+                output logic [31:0] instrD,
                 output logic memwriteM);
   logic [4:0] writereg, writeregM, writeregW;
   logic [31:0] pcnext, pcnextbr, pcplus4, pcbranch, pcbranchM;
   logic [31:0] signimm, signimmsh;
   logic [31:0] srca, srcb;
   logic [31:0] result, rd1, rd2;
-  logic [31:0] instrD, pcplus4D; 
+  logic [31:0] pcplus4D; 
   logic [31:0] pcplus4E, signimmE, rtE, rdE, rd1E, rd2E, aluout, aluoutW, readdataW;
   logic regwriteE, memtoregE, memwriteE, branchE, alusrcE, regdstE, zero;
   logic regwriteM, memtoregM, branchM, regwriteW, memtoregW;
-  logic [1:0] alucontrolE;
+  logic [2:0] alucontrolE;
 
   // next PC logic
   flopr #(32) pcreg(clk, reset, pcnext, pc);

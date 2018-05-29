@@ -12,6 +12,6 @@ module mips(input logic clk, reset, output logic [31:0] pc,
      alusrc, regdst, regwrite, jump, branch, alucontrol);
   
   datapath dp(clk, reset, memtoreg, memwrite, alusrc, regdst, regwrite,
-    jump, alucontrol, pc, instr, aluout, writedata, readdata, instrD, memwriteM);
+    jump, branch, alucontrol, pc, instr, aluout, writedata, readdata, instrD, memwriteM);
 
 endmodule
