@@ -9,19 +9,20 @@ module regclk2 (input logic clk, input logic [31:0] rd1D, rd2D,
 				output logic [2:0] alucontrolE, output logic alusrcE, regdstE);
 				
 	always_ff @(posedge clk)
-		assign rd1E = rd1D;
-		assign rd2E = rd2D;
-		assign RtE = RtD;
-		assign RdE = RdD;
-		assign signimmE = signimmD;
-		assign pcplus4E = pcplus4D;
-		assign regwriteE = regwriteD;
-		assign memtoregE = memtoregD;
-		assign memwriteE = memwriteD;
-		assign branchE = branchD;
-		assign alucontrolE = alucontrolD;
-		assign alusrcE = alusrcD;
-		assign regdstE = regdstD;
-		
+	begin
+		rd1E <= rd1D;
+		rd2E <= rd2D;
+		RtE <= RtD;
+		RdE <= RdD;
+		signimmE <= signimmD;
+		pcplus4E <= pcplus4D;
+		regwriteE <= regwriteD;
+		memtoregE <= memtoregD;
+		memwriteE <= memwriteD;
+		branchE <= branchD;
+		alucontrolE <= alucontrolD;
+		alusrcE <= alusrcD;
+		regdstE <= regdstD;
+	end		
 		
 endmodule

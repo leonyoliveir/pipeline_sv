@@ -7,14 +7,16 @@ module regclk3 (input logic clk, zeroE,
 				output logic regwriteM, memtoregM, memwriteM, branchM);
 				
 	always_ff @(posedge clk)
-		assign zeroM = zeroE;
-		assign aluoutM = aluoutE;
-		assign writedataM = writedataE;
-		assign writeregM = writeregE;
-		assign pcbranchM = pcbranchE;
-		assign regwriteM = regwriteE;
-		assign memtoregM = memtoregE;
-		assign memwriteM = memwriteE;
-		assign branchM = branchE;
+	begin
+		zeroM <= zeroE;
+		aluoutM <= aluoutE;
+		writedataM <= writedataE;
+		writeregM <= writeregE;
+		pcbranchM <= pcbranchE;
+		regwriteM <= regwriteE;
+		memtoregM <= memtoregE;
+		memwriteM <= memwriteE;
+		branchM <= branchE;
+	end
 		
 endmodule
